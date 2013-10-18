@@ -1,14 +1,19 @@
-var location = {
-	function onLocationSuccess(position){
-		return position.coords.latitude + ',' + position.coords.longitude;
-	}
+var asdf;
 
-	function onLocationError(error){
+var onLocationSuccess = function onLocationSuccess(position){
+		asdf = position.coords.latitude + "," + position.coords.longitude;
+};
+
+var onLocationError = function onLocationError(error){
 		alert('Error code: ' + error.code + '; message: ' + error.message);
-	}
+};
 
-	function returnLocation(){
-		navigator.geolocation.getCurrentPosition(onSuccess, onError);
-	}
+var gps = {
+
+
+	returnLocation: function() {
+			navigator.geolocation.getCurrentPosition(onLocationSuccess, onLocationError);
+			return asdf;
+		},
 	
 };

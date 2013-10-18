@@ -19,19 +19,18 @@
 var app = {
     // Application Constructor
     info: infos,
-    location: location,
+    location: gps,
     weather: weather,
     
     initialize: function() {
-        this.bindEvents();
-      
+        app.bindEvents();  
     },
     // Bind Event Listeners
     //
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
+        document.addEventListener('deviceready', app.onDeviceReady, false);
     },
     // deviceready Event Handler
     //
@@ -43,9 +42,9 @@ var app = {
     // Update DOM on a Received Event
     receivedEvent: function(id) {
  
-      this.info.gettime();
-      this.info.gettemp();
-      this.getResult();
+      app.info.gettime();
+      // this.infos.gettemp();
+      app.getResult();
         console.log('Received Event: ' + id);
     },
     
