@@ -19,6 +19,8 @@
 var app = {
     // Application Constructor
     info: infos,
+    location: location,
+    weather: weather,
     
     initialize: function() {
         this.bindEvents();
