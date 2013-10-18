@@ -1,7 +1,7 @@
-var asdf;
+var location;
 
 var onLocationSuccess = function onLocationSuccess(position){
-		asdf = position.coords.latitude + "," + position.coords.longitude;
+		location = position.coords.latitude + "," + position.coords.longitude;
 };
 
 var onLocationError = function onLocationError(error){
@@ -13,7 +13,7 @@ var gps = {
 
 	returnLocation: function() {
 			navigator.geolocation.getCurrentPosition(onLocationSuccess, onLocationError);
-			return asdf;
-		},
+			return location;
+		}
 	
 };
